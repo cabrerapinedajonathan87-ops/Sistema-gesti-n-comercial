@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANUAL_TECNICO.md</title>
+  
+</head>
+<body id="preview">
+<h1 class="code-line has-line-data" data-line-start="0" data-line-end="1"><a id="Manual_Tcnico_Sistema_de_Gestin_Comercial_0"></a>Manual Técnico - Sistema de Gestión Comercial</h1>
+<h2 class="code-line has-line-data" data-line-start="2" data-line-end="3"><a id="1_Introduccin_y_Arquitectura_del_Sistema_2"></a>1. Introducción y Arquitectura del Sistema</h2>
+<p class="has-line-data" data-line-start="3" data-line-end="4">El <strong>Sistema de Gestión Comercial</strong> es una aplicación desarrollada en <strong>Python (modo consola)</strong> bajo un paradigma modular. Su propósito es automatizar las operaciones comerciales básicas de un micronegocio, controlando el inventario, registrando transacciones de venta con cálculo automático de impuestos y generando reportes estadísticos avanzados.</p>
+<h3 class="code-line has-line-data" data-line-start="5" data-line-end="6"><a id="Estructura_de_Directorios_y_Mdulos_5"></a>Estructura de Directorios y Módulos</h3>
+<p class="has-line-data" data-line-start="6" data-line-end="7">El proyecto sigue una arquitectura limpia dividida en responsabilidades lógicas:</p>
+<ul>
+<li class="has-line-data" data-line-start="7" data-line-end="8"><code>src/main.py</code>: Punto de entrada principal. Controla el flujo de los menús interactivos y la limpieza de pantalla según el sistema operativo.</li>
+<li class="has-line-data" data-line-start="8" data-line-end="9"><code>src/estructuras.py</code>: Contiene las estructuras de datos en memoria (listas globales de diccionarios) que almacenan temporalmente los productos, ventas y movimientos.</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10"><code>src/productos.py</code>: Lógica de negocio para altas, consultas, modificaciones y desactivación de productos.</li>
+<li class="has-line-data" data-line-start="10" data-line-end="11"><code>src/inventario.py</code>: Gestión de entradas de mercancía, existencias y alertas de stock mínimo.</li>
+<li class="has-line-data" data-line-start="11" data-line-end="12"><code>src/ventas.py</code>: Procesamiento de carrito de compras, cálculo de subtotal, IVA (12%) y afectación de stock.</li>
+<li class="has-line-data" data-line-start="12" data-line-end="13"><code>src/reportes.py</code>: Módulo analítico para cálculo de ingresos, productos más vendidos, valor del inventario y promedios.</li>
+<li class="has-line-data" data-line-start="13" data-line-end="15"><code>src/archivos.py</code>: Subsistema de persistencia que serializa y deserializa la información hacia archivos de texto plano (<code>.txt</code>).</li>
+</ul>
+<hr>
+<h2 class="code-line has-line-data" data-line-start="17" data-line-end="18"><a id="2_Persistencia_de_Datos_Archivos_Planos_17"></a>2. Persistencia de Datos (Archivos Planos)</h2>
+<p class="has-line-data" data-line-start="18" data-line-end="19">El sistema utiliza archivos de texto delimitados para almacenar la información de forma local sin requerir motores de bases de datos externos:</p>
+<ol>
+<li class="has-line-data" data-line-start="20" data-line-end="22"><strong><code>productos.txt</code></strong>: Almacena los datos de cada artículo con el formato de tubería (<code>|</code>):<br>
+<code>codigo|nombre|categoria|precio|cantidad|stock_minimo|activo</code></li>
+<li class="has-line-data" data-line-start="22" data-line-end="24"><strong><code>ventas.txt</code></strong>: Registra las transacciones procesadas. Los ítems del carrito interno se concatenan mediante punto y coma (<code>;</code>):<br>
+<code>numero_venta|subtotal_general|iva|total|codigo1,cantidad1,subtotal1;codigo2,cantidad2,subtotal2</code></li>
+<li class="has-line-data" data-line-start="24" data-line-end="27"><strong><code>movimientos.txt</code></strong>: Guarda el kárdex o historial de entradas y salidas de inventario:<br>
+<code>fecha|codigo|tipo|cantidad|descripcion</code></li>
+</ol>
+<hr>
+<h2 class="code-line has-line-data" data-line-start="29" data-line-end="30"><a id="3_Funciones_Clave_y_Algoritmos_Principales_29"></a>3. Funciones Clave y Algoritmos Principales</h2>
+<ul>
+<li class="has-line-data" data-line-start="30" data-line-end="31"><strong>Carga y Guardado Automático (<code>archivos.py</code>)</strong>: Al iniciar la aplicación (<code>__main__</code>), se ejecuta <code>cargar_todo()</code>, el cual lee línea por línea los archivos de texto, limpia espacios en blanco y reconstruye los diccionarios en memoria dentro de <code>estructuras.py</code>. Cada vez que se modifica un producto, se registra una venta o entra mercancía, se ejecuta <code>guardar_todo()</code> para evitar pérdida de datos.</li>
+<li class="has-line-data" data-line-start="31" data-line-end="32"><strong>Control de Transacciones de Venta (<code>ventas.py</code>)</strong>: Valida en tiempo real que el código ingresado exista, que el producto esté activo y que la cantidad solicitada no supere el inventario disponible en bodega antes de impactar las existencias.</li>
+</ul>
+
+</body>
+</html>

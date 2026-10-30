@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANUAL_USUARIO.md</title>
+  
+</head>
+<body id="preview">
+<p class="has-line-data" data-line-start="0" data-line-end="1">Markdown</p>
+<h1 class="code-line has-line-data" data-line-start="1" data-line-end="2"><a id="Manual_de_Usuario_Sistema_de_Gestin_Comercial_1"></a>Manual de Usuario - Sistema de Gestión Comercial</h1>
+<h2 class="code-line has-line-data" data-line-start="3" data-line-end="4"><a id="1_Requisitos_del_Sistema_3"></a>1. Requisitos del Sistema</h2>
+<ul>
+<li class="has-line-data" data-line-start="4" data-line-end="5"><strong>Python 3.x</strong> instalado en el equipo.</li>
+<li class="has-line-data" data-line-start="5" data-line-end="7">Ninguna librería externa adicional (utiliza módulos nativos de Python como <code>os</code>, <code>datetime</code>, <code>string</code>, etc.).</li>
+</ul>
+<hr>
+<h2 class="code-line has-line-data" data-line-start="9" data-line-end="10"><a id="2_Cmo_Ejecutar_el_Sistema_9"></a>2. Cómo Ejecutar el Sistema</h2>
+<ol>
+<li class="has-line-data" data-line-start="10" data-line-end="11">Abre tu terminal o consola de comandos en la carpeta raíz del proyecto.</li>
+<li class="has-line-data" data-line-start="11" data-line-end="14">Ejecuta el siguiente comando para iniciar el programa:<pre><code class="has-line-data language-bash" data-line-start="13" data-line-end="14">python src/main.py
+</code></pre>
+</li>
+<li class="has-line-data" data-line-start="14" data-line-end="17">Guía de Navegación por el Menú Principal<br>
+Al iniciar el sistema, verás el menú principal con 5 opciones numéricas:</li>
+</ol>
+<h1 class="code-line has-line-data" data-line-start="17" data-line-end="19"><a id="Plaintext_17"></a>Plaintext</h1>
+<pre class="has-line-data" data-line-start="19" data-line-end="20"><code> SISTEMA DE GESTIÓN COMERCIAL      
+</code></pre>
+<p class="has-line-data" data-line-start="20" data-line-end="21">=======================================</p>
+<ol>
+<li class="has-line-data" data-line-start="21" data-line-end="22">Gestión de Productos 📦</li>
+<li class="has-line-data" data-line-start="22" data-line-end="23">Registro de Ventas 🛒</li>
+<li class="has-line-data" data-line-start="23" data-line-end="24">Control de Inventarios 🏢</li>
+<li class="has-line-data" data-line-start="24" data-line-end="25">Reportes y Estadísticas 📊</li>
+<li class="has-line-data" data-line-start="25" data-line-end="30">Salir del Sistema ❌<br>
+=======================================<br>
+Módulo 1: Gestión de Productos 📦<br>
+Permite dar de alta nuevos artículos, consultar detalles mediante códigos únicos, actualizar precios o nombres, y desactivar productos que ya no se comercializan sin perder el histórico de ventas pasadas.</li>
+</ol>
+<p class="has-line-data" data-line-start="30" data-line-end="32">Módulo 2: Registro de Ventas 🛒<br>
+Te permite ingresar los códigos de los productos que el cliente desea comprar.</p>
+<p class="has-line-data" data-line-start="33" data-line-end="34">Puedes añadir múltiples artículos al carrito de compras virtual.</p>
+<p class="has-line-data" data-line-start="35" data-line-end="36">Para finalizar la venta y facturar, escribe la palabra FIN.</p>
+<p class="has-line-data" data-line-start="37" data-line-end="38">El sistema calcula automáticamente el subtotal, el IVA (12%) y el total a pagar, descontando de inmediato las unidades del inventario y generando un comprobante en pantalla.</p>
+<p class="has-line-data" data-line-start="39" data-line-end="41">Módulo 3: Control de Inventarios 🏢<br>
+Consultar Existencias: Muestra un listado rápido de cuánto stock queda de cada producto en bodega.</p>
+<p class="has-line-data" data-line-start="42" data-line-end="43">Registrar Entrada: Permite reabastecer mercancía ingresando el código del producto y la cantidad que entra, guardando un registro en el historial.</p>
+<p class="has-line-data" data-line-start="44" data-line-end="45">Alertas de Stock Mínimo: Revisa automáticamente qué productos están por debajo del límite de seguridad establecido y emite advertencias visuales (🚨).</p>
+<p class="has-line-data" data-line-start="46" data-line-end="47">Historial de Movimientos: Muestra el kárdex detallado de entradas y salidas de la bodega.</p>
+<p class="has-line-data" data-line-start="48" data-line-end="50">Módulo 4: Reportes y Estadísticas 📊<br>
+Ofrece un desglose analítico completo del negocio:</p>
+<p class="has-line-data" data-line-start="51" data-line-end="52">Listado general de productos.</p>
+<p class="has-line-data" data-line-start="53" data-line-end="54">Reporte de stock crítico.</p>
+<p class="has-line-data" data-line-start="55" data-line-end="56">Historial completo de ventas y facturas emitidas.</p>
+<p class="has-line-data" data-line-start="57" data-line-end="58">Total de ingresos monetarios recaudados en caja.</p>
+<p class="has-line-data" data-line-start="59" data-line-end="60">Producto líder en ventas (el más vendido).</p>
+<p class="has-line-data" data-line-start="61" data-line-end="62">Valor total del inventario valorizado a precio de venta.</p>
+<p class="has-line-data" data-line-start="63" data-line-end="64">Promedio de facturación por ticket de venta.</p>
+<p class="has-line-data" data-line-start="65" data-line-end="67">Módulo 5: Salir del Sistema ❌<br>
+Cierra la aplicación guardando de forma segura y automática todos los cambios recientes en los archivos de texto locales.</p>
+<hr>
+<h3 class="code-line has-line-data" data-line-start="71" data-line-end="72"><a id="Cmo_guardarlos_desde_Dillinger_71"></a>¿Cómo guardarlos desde Dillinger?</h3>
+<ol>
+<li class="has-line-data" data-line-start="72" data-line-end="73">Pega el texto en la ventana izquierda de <a href="http://Dillinger.io">Dillinger.io</a> (verás la vista previa generada en la derecha).</li>
+<li class="has-line-data" data-line-start="73" data-line-end="74">Dirígete a la parte superior y haz clic en la pestaña <strong>Export</strong>.</li>
+<li class="has-line-data" data-line-start="74" data-line-end="75">Selecciona <strong>Markdown (.md)</strong> para descargar el archivo directamente a tu computadora con el nombre y formato correcto. ¡Listo para tu repositorio de GitHub!</li>
+</ol>
+
+</body>
+</html>
